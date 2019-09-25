@@ -428,15 +428,15 @@ html {
   }
 
   .app-picture {
-    width: 100%;
+    width: 80%;
     margin-top: 150px;
-    position: absolute;
-    left: 16%;
+    position: flex;
+    align-items: center;
   }
 
   .app-picture img {
-    padding: 1px 1%;
-    width: 65%;
+    padding: 0;
+    width: 75%;
     /* border: 1px solid red; */
   }
 
