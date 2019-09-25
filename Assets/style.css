@@ -395,7 +395,7 @@ html {
   .app-text {
     width: 80%;
     height: 70%;
-    top: 20%;
+    top: 15%;
     left: 35px;
     position: absolute;
     /* border: 1px red solid; */
@@ -429,7 +429,7 @@ html {
 
   .app-picture {
     width: 80%;
-    margin-top: 165px;
+    margin-top: 130px;
     position: flex;
     align-items: center;
   }
