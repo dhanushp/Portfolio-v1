@@ -335,12 +335,20 @@ html {
 /* Media Queries */
 
 @media screen and (max-width: 992px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+  }
+
   .menu {
     display: block;
     background-color: #222831;
     position: fixed;
-    width: 60%;
-    z-index: 99;
+    width: 100%;
   }
 
   #menu-center {
