@@ -7,9 +7,103 @@ html {
   font-family: "Nunito", sans-serif;
 }
 
+.theme-light {
+  --color-primary: #bcc1c5;
+  --color-secondary: #d8d8d8;
+  --color-accent: #00adb5;
+  --font-color: #46494c;
+}
+.theme-dark {
+  --color-primary: #222831;
+  --color-secondary: #393e46;
+  --color-accent: #00adb5;
+  --font-color: #eeeeee;
+}
+
+.container button {
+  color: var(--font-color);
+  background: var(--color-primary);
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  top: 14%;
+  left: 90%;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url("https://i.ibb.co/FxzBYR9/night.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .menu {
   display: block;
-  background-color: #222831;
+  background-color: var(--color-primary);
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -30,24 +124,24 @@ html {
 #menu-center ul li {
   list-style: none;
   margin: 0px 30px;
-  color: #eeeeee;
+  color: var(--font-color);
   cursor: pointer;
 }
 #menu-center ul li a.active {
-  color: #eee;
+  color: var(--font-color);
   text-decoration: none;
-  border-bottom: 3px solid #00adb5;
+  border-bottom: 3px solid var(--color-accent);
 }
 #menu-center ul li a {
   display: inline-block;
   text-decoration: none;
   margin: 0;
   padding: 0;
-  color: #eeeeee;
+  color: var(--font-color);
   font-size: 19px;
 }
 #home {
-  background-color: #222831;
+  background-color: var(--color-primary);
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -64,28 +158,28 @@ html {
 
 .app-text #me {
   font-size: 35px;
-  color: #eee;
+  color: var(--font-color);
   font-weight: normal;
   /* border: 1px solid red; */
   margin-bottom: 0px;
 }
 
 .app-text h1 {
-  color: #00adb5;
+  color: var(--color-accent);
   font-size: 50px;
   margin-top: 0px;
   /* border: 1px solid red; */
 }
 
 .app-text #young {
-  color: #eee;
+  color: var(--font-color);
   margin-top: 15px;
   font-size: 35px;
   /* border: 1px red solid; */
 }
 
 .app-text #young span {
-  color: #00adb5;
+  color: var(--color-accent);
 }
 
 .app-picture {
@@ -103,7 +197,7 @@ html {
 #portfolio {
   height: 100%;
   width: 100%;
-  background-color: #222831;
+  background-color: var(--color-primary);
 }
 
 .my-work {
@@ -123,7 +217,7 @@ html {
   width: 80%;
   margin: auto;
   /* border: 1px red solid;  */
-  color: #393e46;
+  color: var(--color-secondary);
 }
 
 .cards {
@@ -213,7 +307,7 @@ html {
 }
 
 #about {
-  background-color: #222831;
+  background-color: var(--color-primary);
   height: 100%;
   width: 100%;
 }
@@ -232,12 +326,12 @@ html {
   margin-right: 0px;
   font-weight: 900;
   /* border: 1px red solid;  */
-  color: #393e46;
+  color: var(--color-secondary);
 }
 
 .flex-center {
   width: 100%;
-  background: #222831;
+  background: var(--color-primary);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -257,7 +351,7 @@ html {
   padding: 50px;
   -webkit-animation: icon3d 200ms 10;
   animation: icon3d 200ms 10;
-  color: #eee;
+  color: var(--font-color);
 }
 
 .icon-3d:hover {
@@ -309,7 +403,7 @@ html {
 }
 
 .footer a {
-  color: #00adb5;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
@@ -344,9 +438,46 @@ html {
     font-family: "Nunito", sans-serif;
   }
 
+  .switch {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: 40px;
+    height: 14px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url("https://i.ibb.co/FxzBYR9/night.png");
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   .menu {
     display: block;
-    background-color: #222831;
+    background-color: var(--color-primary);
     position: fixed;
     width: 100%;
   }
@@ -366,7 +497,7 @@ html {
   #menu-center ul li {
     list-style: none;
     margin: 0px 10px;
-    color: #eeeeee;
+    color: var(--font-color);
     cursor: pointer;
   }
 
@@ -375,17 +506,17 @@ html {
     text-decoration: none;
     margin: 0;
     padding: 0;
-    color: #eeeeee;
+    color: var(--font-color);
     font-size: 13px;
   }
   #menu-center ul li a.active {
-    color: #eee;
+    color: var(--font-color);
     text-decoration: none;
-    border-bottom: 3px solid #00adb5;
+    border-bottom: 3px solid var(--color-accent);
   }
 
   #home {
-    background-color: #222831;
+    background-color: var(--color-primary);
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -403,28 +534,28 @@ html {
 
   .app-text #me {
     font-size: 28px;
-    color: #eee;
+    color: var(--font-color);
     font-weight: normal;
     /* border: 1px solid red; */
     margin-bottom: 0px;
   }
 
   .app-text h1 {
-    color: #00adb5;
+    color: var(--color-accent);
     font-size: 36px;
     margin-top: 0px;
     /* border: 1px solid red; */
   }
 
   .app-text #young {
-    color: #eee;
+    color: var(--font-color);
     margin-top: 15px;
     font-size: 16px;
     /* border: 1px red solid; */
   }
 
   .app-text #young span {
-    color: #00adb5;
+    color: var(--color-accent);
   }
 
   .app-picture {
@@ -443,7 +574,7 @@ html {
   #portfolio {
     height: 100%;
     width: 100%;
-    background-color: #222831;
+    background-color: var(--color-primary);
   }
 
   .my-work {
@@ -462,7 +593,7 @@ html {
     width: 100%;
     /* margin: auto; */
     /* border: 1px red solid; */
-    color: #393e46;
+    color: var(--color-secondary);
   }
 
   .cards {
@@ -529,7 +660,7 @@ html {
   }
 
   #about {
-    background-color: #222831;
+    background-color: var(--color-primary);
     height: 100%;
     width: 100%;
   }
@@ -552,12 +683,12 @@ html {
     width: 100%;
     /* margin: auto; */
     /* border: 1px red solid; */
-    color: #393e46;
+    color: var(--color-secondary);
   }
 
   .flex-center {
     width: 100%;
-    background: #222831;
+    background: var(--color-primary);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -580,7 +711,7 @@ html {
     padding: 15px;
     -webkit-animation: icon3d 200ms 10;
     animation: icon3d 200ms 10;
-    color: #eee;
+    color: var(--font-color);
   }
 
   .icon-3d:hover {
@@ -631,7 +762,7 @@ html {
   }
 
   .footer a {
-    color: #00adb5;
+    color: var(--color-accent);
     text-decoration: none;
   }
 
@@ -658,6 +789,43 @@ html {
 /* Iphone 5 */
 
 @media screen and (device-aspect-ratio: 40/71) {
+  .switch {
+    position: absolute;
+    top: 13%;
+    left: 78%;
+    width: 40px;
+    height: 14px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url("https://i.ibb.co/FxzBYR9/night.png");
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   .app-text {
     width: 80%;
     height: 70%;
@@ -669,28 +837,28 @@ html {
 
   .app-text #me {
     font-size: 25px;
-    color: #eee;
+    color: var(--font-color);
     font-weight: normal;
     /* border: 1px solid red; */
     margin-bottom: 0px;
   }
 
   .app-text h1 {
-    color: #00adb5;
+    color: var(--color-accent);
     font-size: 30px;
     margin-top: 0px;
     /* border: 1px solid red; */
   }
 
   .app-text #young {
-    color: #eee;
+    color: var(--font-color);
     margin-top: 15px;
     font-size: 13px;
     /* border: 1px red solid; */
   }
 
   .app-text #young span {
-    color: #00adb5;
+    color: var(--color-accent);
   }
 
   .app-picture {
@@ -709,7 +877,7 @@ html {
   #portfolio {
     height: 100%;
     width: 100%;
-    background-color: #222831;
+    background-color: var(--color-primary);
   }
 
   .my-work {
@@ -728,7 +896,7 @@ html {
     width: 100%;
     /* margin: auto; */
     /* border: 1px red solid; */
-    color: #393e46;
+    color: var(--color-secondary);
   }
 
   .cards {
@@ -796,7 +964,7 @@ html {
   }
 
   #about {
-    background-color: #222831;
+    background-color: var(--color-primary);
     height: 100%;
     width: 100%;
   }
@@ -819,12 +987,12 @@ html {
     width: 100%;
     /* margin: auto; */
     /* border: 1px red solid; */
-    color: #393e46;
+    color: var(--color-secondary);
   }
 
   .flex-center {
     width: 100%;
-    background: #222831;
+    background: var(--color-primary);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -847,7 +1015,7 @@ html {
     padding: 15px;
     -webkit-animation: icon3d 200ms 10;
     animation: icon3d 200ms 10;
-    color: #eee;
+    color: var(--font-color);
   }
 
   .icon-3d:hover {
@@ -898,7 +1066,7 @@ html {
   }
 
   .footer a {
-    color: #00adb5;
+    color: var(--color-accent);
     text-decoration: none;
   }
 
