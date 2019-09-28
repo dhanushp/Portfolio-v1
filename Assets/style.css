@@ -8,16 +8,16 @@ html {
 }
 
 .theme-light {
-  --color-primary: #bcc1c5;
-  --color-secondary: #d8d8d8;
-  --color-accent: #00adb5;
-  --font-color: #46494c;
-}
-.theme-dark {
   --color-primary: #222831;
   --color-secondary: #393e46;
   --color-accent: #00adb5;
   --font-color: #eeeeee;
+}
+.theme-dark {
+  --color-primary: #bcc1c5;
+  --color-secondary: #d8d8d8;
+  --color-accent: #00adb5;
+  --font-color: #46494c;
 }
 
 .container button {
